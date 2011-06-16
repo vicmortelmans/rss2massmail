@@ -11,6 +11,10 @@ Takes as an argument the URL of an RSS feed and the URL of a file containing
 email addresses (addresses.txt) and the URL of a custom XSLT script that 
 transforms a webpage into a simple HTML layout (custom.xslt).
 
+Uses:
+  * SES scripts.
+  * Lots of lots of PERL modules (esp. to accommodate SES scripts).
+
 Example: 
   rss2massmail.pl -f http://www.doorstroming.net/index.php?option=com_rd_rss&id=2
     -t doorstroming.xslt -a addresses.txt
