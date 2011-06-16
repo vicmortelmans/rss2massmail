@@ -4,8 +4,9 @@ RSS2MassMail consists of
 rss2massmail.pl
 -------------
 A PERL script that takes care of the overall procedure:
-1/ run rss2mail.xslt
-2/ send out the mass mail
+1/ preprocess the rss2mail.xslt script to include the custom XSLT script URL
+2/ run the preprocessed rss2mail.xslt to produce the HTML mail body
+3/ send out the mass mail to the addresses list
 
 Takes as an argument the URL of an RSS feed and the URL of a file containing
 email addresses (addresses.txt) and the URL of a custom XSLT script that 
@@ -24,10 +25,16 @@ rss2mail.xslt
 -------------
 An XSLT script that performs these steps:
 1/ download the latest post on the RSS feed
-2/ run html2mailhtml.xslt
+2/ apply the stylesheets (included by preprocessing!)
 
-Takes as an argument the URL of an RSS feed and the URL of a custom XSLT script
-that transforms a webpage into a simple HTML (custom.xslt).
+Takes as an argument the URL of an RSS feed.
+
+
+addinclude.xslt
+-------------
+An XSLT script that adds an include statemet to another XSLT script. 
+
+Takes as an argument the URL of a custom XSLT script that must be included.
 
 
 <custom>.xslt
